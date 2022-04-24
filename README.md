@@ -10,5 +10,19 @@
 * [libboost-program-options1.65.1](https://packages.ubuntu.com/bionic/libboost-program-options1.65.1)
 * [Source Package: boost1.65.1](https://packages.ubuntu.com/source/bionic/boost1.65.1)
 
+### Build for x64 machine
+
+```
+cd ${BOOST_DIR}/make/x64
+make
+```
+
+### Build for i586 machine
+
+```
+cd ${BOOST_DIR}/make/i386
+make
+```
+
 ---
 [Head icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/head)
