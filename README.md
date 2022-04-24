@@ -34,6 +34,11 @@ sudo apt install gcc-multilib
 sudo apt install g++-multilib
 ```
 
+###### NDK r18b
+
+* [NDK Downloads](https://developer.android.com/ndk/downloads)
+* [NDK r18b for Linux](https://dl.google.com/android/repository/android-ndk-r18b-linux-x86_64.zip)
+
 ### Build for x64 machine
 
 ```
