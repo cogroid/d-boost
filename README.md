@@ -10,6 +10,30 @@
 * [libboost-program-options1.65.1](https://packages.ubuntu.com/bionic/libboost-program-options1.65.1)
 * [Source Package: boost1.65.1](https://packages.ubuntu.com/source/bionic/boost1.65.1)
 
+### Prerequisites
+
+###### build-essential
+
+```
+sudo apt-get install build-essential
+```
+
+###### GLIBC == 2.27
+
+```
+ldd --version
+```
+
+* Ubuntu 18.04
+
+###### GCC 32 bit
+
+```
+sudo apt install gcc-multilib
+
+sudo apt install g++-multilib
+```
+
 ### Build for x64 machine
 
 ```
