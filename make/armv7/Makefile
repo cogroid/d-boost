@@ -4,6 +4,7 @@ all: clean
 	cd ../../tools/build; \
 	cp -f ../../make/armv7/user-config.jam ./example/; \
 	cp -f ../../make/armv7/user-config.jam ./src/; \
+	cp -f ../../make/armv7/operations.cpp ../../libs/filesystem/src/; \
 	./bootstrap.sh; \
 	cp -f ../../make/armv7/user-config.jam ./example/; \
 	cp -f ../../make/armv7/user-config.jam ./src/; \
