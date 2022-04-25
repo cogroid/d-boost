@@ -1,0 +1,45 @@
+import os ;
+local AndroidNDKRoot = [ os.environ ANDROIDNDKROOT ] ;
+local AndroidBinariesPath = [ os.environ CLANGPATH ] ;
+
+using clang : armeabiv7a
+:
+$(AndroidBinariesPath)/clang++
+:
+<compileflags>-gcc-toolchain
+<compileflags>$(AndroidNDKRoot)/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64
+<compileflags>-target
+<compileflags>armv7-linux-androideabi
+<compileflags>-march=armv7-a
+<compileflags>-mfloat-abi=softfp
+<compileflags>-mfpu=vfp
+<compileflags>-mthumb
+<compileflags>-fpic
+<compileflags>-fno-integrated-as
+<compileflags>--sysroot
+<compileflags>$(AndroidNDKRoot)/sysroot
+<compileflags>-isystem
+<compileflags>$(AndroidNDKRoot)/sysroot/usr/include/arm-linux-androideabi
+<compileflags>-D__ANDROID_API__=18
+<compileflags>-fexceptions
+<compileflags>-frtti
+<compileflags>-ffunction-sections
+<compileflags>-funwind-tables
+<compileflags>-fstack-protector-strong
+<compileflags>-Wno-invalid-command-line-argument
+<compileflags>-Wno-unused-command-line-argument
+<compileflags>-no-canonical-prefixes
+<compileflags>-I$(AndroidNDKRoot)/sources/cxx-stl/llvm-libc++/include
+<compileflags>-I$(AndroidNDKRoot)/sources/cxx-stl/llvm-libc++abi/include
+<compileflags>-I$(AndroidNDKRoot)/sources/android/support/include
+<compileflags>-DANDROID
+<compileflags>-Wa,--noexecstack
+<compileflags>-Wformat
+<compileflags>-Werror=format-security
+<compileflags>-DNDEBUG
+<compileflags>-O2
+<archiver>$(AndroidNDKRoot)/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/arm-linux-androideabi/bin/ar
+<ranlib>$(AndroidNDKRoot)/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/arm-linux-androideabi/bin//ranlib
+
+;
+
