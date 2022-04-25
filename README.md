@@ -37,10 +37,10 @@ sudo apt install g++-multilib
 ###### NDK r18b
 
 * [NDK Downloads](https://developer.android.com/ndk/downloads)
-* [NDK r16b for Linux](https://dl.google.com/android/repository/android-ndk-r16b-linux-x86_64.zip)
+* [NDK r18b for Linux](https://dl.google.com/android/repository/android-ndk-r18b-linux-x86_64.zip)
 
 ```
-Unzip to folder /home/cogroid/local/android-ndk-r16b
+Unzip to folder /home/cogroid/local/android-ndk-r18b
 ```
 
 ###### clang
@@ -60,6 +60,13 @@ make
 
 ```
 cd ${BOOST_DIR}/make/i386
+make
+```
+
+### Build for armv7-a machine
+
+```
+cd ${BOOST_DIR}/make/armv7
 make
 ```
 
