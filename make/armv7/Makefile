@@ -17,17 +17,20 @@ all: clean
 	export CLANGPATH=/home/cogroid/local/android-ndk-r18b/toolchains/llvm/prebuilt/linux-x86_64/bin; \
 	export PATH=/home/cogroid/local/android-ndk-r18b/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/arm-linux-androideabi/bin:${PATH}; \
 	./build/armv7/tools/bin/bjam \
+	-q \
 	cflags="-v -ferror-limit=1024 -I/home/cogroid/local/android-ndk-r18b/sources/cxx-stl/llvm-libc++/include -I/home/cogroid/local/android-ndk-r18b/sources/cxx-stl/llvm-libc++abi/include " \
 	cxxflags="-v -ferror-limit=1024 -I/home/cogroid/local/android-ndk-r18b/sources/cxx-stl/llvm-libc++/include -I/home/cogroid/local/android-ndk-r18b/sources/cxx-stl/llvm-libc++abi/include " \
-	link=static \
+	link=shared \
+	binary-format=elf \
+	abi=aapcs \
 	target-os=android \
 	toolset=clang-armeabiv7a \
 	threading=multi \
 	architecture=arm \
 	address-model=32 \
-	--layout=tagged \
+	--layout=system \
 	--without-python \
-	--build-dir=./build/armv7 --stagedir=./build/armv7/stage stage
+	--build-dir=./build/armv7 --includedir=./build/armv7/install/include --libdir=./build/armv7/install/libs/armeabi-v7a install
 
 clean:
 	rm -rf ../../build/armv7

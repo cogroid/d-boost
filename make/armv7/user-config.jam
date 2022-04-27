@@ -10,6 +10,8 @@ $(AndroidBinariesPath)/clang++
 <compileflags>$(AndroidNDKRoot)/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64
 <compileflags>-target
 <compileflags>armv7-linux-androideabi
+<compileflags>-L$(AndroidNDKRoot)/platforms/android-18/arch-arm/usr/lib 
+<compileflags>-B$(AndroidNDKRoot)/platforms/android-18/arch-arm/usr/lib
 <compileflags>-march=armv7-a
 <compileflags>-mfloat-abi=softfp
 <compileflags>-mfpu=vfp
@@ -40,6 +42,11 @@ $(AndroidBinariesPath)/clang++
 <compileflags>-O2
 <archiver>$(AndroidNDKRoot)/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/arm-linux-androideabi/bin/ar
 <ranlib>$(AndroidNDKRoot)/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/arm-linux-androideabi/bin//ranlib
+<linkflags>--target=armv7-linux-androideabi
+<linkflags>-L$(AndroidNDKRoot)/platforms/android-18/arch-arm/usr/lib 
+<linkflags>-B$(AndroidNDKRoot)/platforms/android-18/arch-arm/usr/lib
+<linkflags>-L$(AndroidNDKRoot)/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb
+<linkflags>-B$(AndroidNDKRoot)/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb
 
 ;
 
