@@ -1,5 +1,5 @@
-BUILD_DIR=../../build
-TOOL_DIR=../../build/tools
+BUILD_DIR=../../build/i386
+TOOL_DIR=../../build/i386/tools
 TOOL_BIN_DIR=${TOOL_DIR}/bin
 
 all: clean
@@ -9,13 +9,16 @@ all: clean
 	./bootstrap.sh; \
 	./b2 install --prefix=${TOOL_DIR};
 	cd ../../; \
-	./build/tools/bin/bjam cflags="-m32 -march=i386" \
+	./build/i386/tools/bin/bjam \
+	link=shared \
+	cflags="-m32 -march=i386" \
 	cxxflags="-m32 -march=i386" \
 	address-model=32 \
 	threading=multi \
 	architecture=x86 \
 	instruction-set=i586 \
-	--build-dir=./build --stagedir=./build/stage toolset=gcc stage
+	--without-python \
+	--build-dir=./build/i386 --stagedir=./build/i386/stage toolset=gcc stage
 
 clean:
 	rm -rf ${BUILD_DIR}
