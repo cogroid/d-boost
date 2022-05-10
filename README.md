@@ -66,6 +66,7 @@ make
 ### Build for armv7-a machine
 
 ```
+sudo apt update
 cd ${BOOST_DIR}/make/armv7
 make
 ```
