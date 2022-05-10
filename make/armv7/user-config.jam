@@ -12,10 +12,13 @@ $(AndroidBinariesPath)/clang++
 <compileflags>armv7-linux-androideabi
 <compileflags>-L$(AndroidNDKRoot)/platforms/android-18/arch-arm/usr/lib 
 <compileflags>-B$(AndroidNDKRoot)/platforms/android-18/arch-arm/usr/lib
+<compileflags>-L/home/cogroid/local/android-ndk-r18b/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a
+<compileflags>-B/home/cogroid/local/android-ndk-r18b/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a
 <compileflags>-march=armv7-a
 <compileflags>-mfloat-abi=softfp
 <compileflags>-mfpu=vfp
 <compileflags>-mthumb
+<compileflags>-stdlib=libc++
 <compileflags>-fpic
 <compileflags>-fno-integrated-as
 <compileflags>--sysroot
